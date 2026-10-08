@@ -1,15 +1,17 @@
-import { Service } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
-@Service()
+@Injectable({
+  providedIn: 'root',
+})
 export class Cart {
-  itens: any[] = [];
+  itens = signal<any[]>([]);
 
   adicionar(produto: any) {
-    this.itens.push(produto);
+    this.itens.update((itens) => [...itens, produto]);
   }
 
   obterQuantidade(): number {
-    return this.itens.length;
+    return this.itens().length;
   }
 }
 
