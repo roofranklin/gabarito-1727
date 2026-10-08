@@ -1,9 +1,8 @@
 <section class="vitrine-secao">
   <h2 class="vitrine-titulo">Vitrine de Produtos</h2>
   <div class="vitrine-grid">
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
+    @for (item of produtos; track item.id) {
+      <app-product-card [produto]="item"></app-product-card>
+    }
   </div>
 </section>

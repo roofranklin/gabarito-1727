@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product, Produto } from '../../services/product';
 import { ProductCard } from '../product-card/product-card';
 
 @Component({
@@ -7,4 +8,10 @@ import { ProductCard } from '../product-card/product-card';
   styleUrl: './lista-produtos.css',
   templateUrl: './lista-produtos.html',
 })
-export class ListaProdutos {}
+export class ListaProdutos {
+  produtos: Produto[] = [];
+
+  constructor(private productService: Product) {
+    this.produtos = this.productService.produtos;
+  }
+}
