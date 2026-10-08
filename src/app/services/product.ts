@@ -20,7 +20,7 @@ export class Product {
       price: 109.95,
       description: 'Mochila perfeita para uso diário e passeios.',
       category: 'acessorios',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png',
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ export class Product {
       price: 22.3,
       description: 'Estilo slim fit, tecido confortável e leve.',
       category: 'roupas',
-      image: 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
+      image: 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png',
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ export class Product {
       price: 55.99,
       description: 'Ótima jaqueta para outono e inverno.',
       category: 'roupas',
-      image: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg',
+      image: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png',
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ export class Product {
       price: 15.99,
       description: 'Camisa casual elegante e confortável.',
       category: 'roupas',
-      image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg',
+      image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png',
     },
   ];
 }
