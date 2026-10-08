@@ -5,6 +5,9 @@
       <span>Início</span>
       <span>Produtos</span>
       <span>Contato</span>
+      @if (cartService.obterQuantidade() > 0) {
+        <span class="carrinho">Carrinho: {{ cartService.obterQuantidade() }} itens</span>
+      }
     </nav>
   </div>
 </header>

@@ -19,6 +19,22 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, gabarito-1727');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Minha Loja');
+  });
+
+  it('should update cart count in header when item is added', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    const button = compiled.querySelector('.btn-comprar') as HTMLButtonElement;
+    expect(button).toBeTruthy();
+    button.click();
+
+    await fixture.whenStable();
+    fixture.detectChanges();
+
+    const carrinho = compiled.querySelector('.carrinho');
+    expect(carrinho?.textContent).toContain('Carrinho: 1 itens');
   });
 });

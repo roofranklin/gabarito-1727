@@ -1,8 +1,9 @@
 <section class="vitrine-secao">
   <h2 class="vitrine-titulo">Vitrine de Produtos</h2>
   <div class="vitrine-grid">
-    @for (item of produtos; track item.id) {
-      <app-product-card [produto]="item"></app-product-card>
+    @for (prod of produtos; track prod.id) {
+      <app-product-card [produtoRecebido]="prod" (adicionar)="receberProduto($event)">
+      </app-product-card>
     }
   </div>
 </section>

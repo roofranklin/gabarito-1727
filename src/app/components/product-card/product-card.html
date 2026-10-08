@@ -1,10 +1,12 @@
 <div class="card-produto">
   <div class="card-imagem">
-    <img [src]="produto?.image" [alt]="produto?.title" width="100" />
+    <img [src]="produtoRecebido?.image" [alt]="produtoRecebido?.title" width="100" />
   </div>
   <div class="card-conteudo">
-    <h3 class="produto-nome">{{ produto?.title }}</h3>
-    <p class="produto-preco">R$ {{ produto?.price }}</p>
-    <button type="button" class="btn-comprar">Adicionar ao Carrinho</button>
+    <h3 class="produto-nome">{{ produtoRecebido?.title }}</h3>
+    <p class="produto-preco">R$ {{ produtoRecebido?.price }}</p>
+    <button type="button" class="btn-comprar" (click)="clicouComprar()">
+      Adicionar ao Carrinho
+    </button>
   </div>
 </div>
