@@ -1,42 +1,19 @@
-.secao-produtos {
+:host {
+  display: block;
+}
+
+.vitrine-secao {
   margin-top: 1rem;
 }
 
-.secao-produtos h2 {
+.vitrine-titulo {
   font-size: 1.4rem;
   margin-bottom: 1.25rem;
-  color: #333;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.25rem;
-}
-
-.card-produto {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.card-produto h3 {
-  font-size: 1.1rem;
   color: #212529;
 }
 
-.descricao {
-  font-size: 0.9rem;
-  color: #6c757d;
-  flex: 1;
-}
-
-.preco {
-  font-weight: bold;
-  color: #198754;
-  font-size: 1.1rem;
+.vitrine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
