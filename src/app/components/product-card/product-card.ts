@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Produto } from '../../services/product';
 
 @Component({
@@ -8,5 +8,15 @@ import { Produto } from '../../services/product';
   templateUrl: './product-card.html',
 })
 export class ProductCard {
-  @Input() produto?: Produto;
+  @Input() produtoRecebido?: Produto;
+  @Output() adicionar = new EventEmitter<any>();
+
+  // Suporte retrocompatível para [produto]
+  @Input() set produto(val: Produto | undefined) {
+    this.produtoRecebido = val;
+  }
+
+  clicouComprar() {
+    this.adicionar.emit(this.produtoRecebido);
+  }
 }

@@ -22,3 +22,11 @@ nav span {
   cursor: pointer;
   font-size: 0.95rem;
 }
+
+.carrinho {
+  background-color: #ffc107;
+  color: #212529;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+}
