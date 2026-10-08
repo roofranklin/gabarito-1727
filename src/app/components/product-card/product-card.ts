@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Produto } from '../../services/product';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './product-card.css',
   templateUrl: './product-card.html',
 })
-export class ProductCard {}
+export class ProductCard {
+  @Input() produto?: Produto;
+}
