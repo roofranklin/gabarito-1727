@@ -46,5 +46,13 @@ export class Product {
       category: 'roupas',
       image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png',
     },
+    {
+      id: 5,
+      title: 'Tênis Esportivo Runner Pro',
+      price: 299.9,
+      description: 'Tênis ideal para corridas e treinos de alta performance.',
+      category: 'calcados',
+      image: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png',
+    },
   ];
 }
