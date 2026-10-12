@@ -50,6 +50,13 @@
   margin: 0 0 0.5rem;
 }
 
+.produto-descricao {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
 .produto-preco {
   font-size: 1.2rem;
   font-weight: 700;

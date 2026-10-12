@@ -1,8 +1,10 @@
+import { CurrencyPipe, UpperCasePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TruncatePipe } from '../../pipes/truncate-pipe';
 import { Produto } from '../../services/product';
 
 @Component({
-  imports: [],
+  imports: [CurrencyPipe, UpperCasePipe, TruncatePipe],
   selector: 'app-product-card',
   styleUrl: './product-card.css',
   templateUrl: './product-card.html',
