@@ -2,7 +2,7 @@
   <h2 class="vitrine-titulo">Vitrine de Produtos</h2>
 
   @if (carregando()) {
-    <p class="mensagem-carregando">Carregando vitrine de produtos...</p>
+    <p class="mensagem-carregando">Carregando produtos...</p>
   } @else {
     <div class="vitrine-grid">
       @for (prod of produtos(); track prod.id) {
