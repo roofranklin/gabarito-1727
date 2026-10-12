@@ -23,9 +23,16 @@ export class ListaProdutos implements OnInit {
   }
 
   carregarProdutos(): void {
-    // Simulação do carregamento da vitrine
-    this.produtos = this.productService.produtos;
-    this.carregando = false;
+    this.productService.obterProdutos().subscribe({
+      next: (dados) => {
+        this.produtos = dados;
+        this.carregando = false;
+      },
+      error: (erro) => {
+        console.error('Erro ao buscar produtos:', erro);
+        this.carregando = false;
+      },
+    });
   }
 
   receberProduto(produto: any) {
