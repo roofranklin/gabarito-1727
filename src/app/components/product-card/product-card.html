@@ -4,7 +4,7 @@
   </div>
   <div class="card-conteudo">
     <h3 class="produto-nome">{{ produtoRecebido?.title | uppercase }}</h3>
-    <p class="produto-descricao">{{ produtoRecebido?.description | truncate: 50 }}</p>
+    <p class="produto-descricao">{{ produtoRecebido?.description | truncate: 30 }}</p>
     <p class="produto-preco">{{ produtoRecebido?.price | currency: 'BRL' }}</p>
     <button type="button" class="btn-comprar" (click)="clicouComprar()">
       Adicionar ao Carrinho
