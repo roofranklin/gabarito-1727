@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Cart } from '../../services/cart';
 import { Product, Produto } from '../../services/product';
 import { ProductCard } from '../product-card/product-card';
@@ -10,8 +10,8 @@ import { ProductCard } from '../product-card/product-card';
   templateUrl: './lista-produtos.html',
 })
 export class ListaProdutos implements OnInit {
-  produtos: Produto[] = [];
-  carregando: boolean = true;
+  produtos = signal<Produto[]>([]);
+  carregando = signal<boolean>(true);
 
   constructor(
     private productService: Product,
@@ -25,12 +25,12 @@ export class ListaProdutos implements OnInit {
   carregarProdutos(): void {
     this.productService.obterProdutos().subscribe({
       next: (dados) => {
-        this.produtos = dados;
-        this.carregando = false;
+        this.produtos.set(dados);
+        this.carregando.set(false);
       },
       error: (erro) => {
         console.error('Erro ao buscar produtos:', erro);
-        this.carregando = false;
+        this.carregando.set(false);
       },
     });
   }
