@@ -11,7 +11,6 @@ import { ProductCard } from '../product-card/product-card';
 })
 export class ListaProdutos implements OnInit {
   produtos = signal<Produto[]>([]);
-  carregando = signal<boolean>(true);
 
   constructor(
     private productService: Product,
@@ -23,15 +22,8 @@ export class ListaProdutos implements OnInit {
   }
 
   carregarProdutos(): void {
-    this.productService.obterProdutos().subscribe({
-      next: (dados) => {
-        this.produtos.set(dados);
-        this.carregando.set(false);
-      },
-      error: (erro) => {
-        console.error('Erro ao buscar produtos:', erro);
-        this.carregando.set(false);
-      },
+    this.productService.obterProdutos().subscribe((dados) => {
+      this.produtos.set(dados);
     });
   }
 
