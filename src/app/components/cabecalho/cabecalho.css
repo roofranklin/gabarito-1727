@@ -17,11 +17,20 @@
   font-size: 1.5rem;
 }
 
-nav span {
+nav span,
+nav a {
   margin-left: 1rem;
   cursor: pointer;
   font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
+
+nav a:hover {
+  opacity: 0.85;
+}
+
 
 .carrinho {
   background-color: #ffc107;

@@ -1,16 +1,17 @@
 <header class="cabecalho">
   <div class="container">
-    <h1>Minha Loja</h1>
+    <h1 routerLink="/" style="cursor: pointer;">Minha Loja</h1>
     <nav>
-      <span>Início</span>
-      <span>Produtos</span>
-      <span>Contato</span>
+      <a routerLink="/" class="nav-item">Início</a>
+      <a routerLink="/" class="nav-item">Produtos</a>
+      <a routerLink="/checkout" class="nav-item link-checkout">Checkout</a>
       @if (quantidade() > 0) {
-        <span class="carrinho">Carrinho: {{ quantidade() }} itens</span>
+        <a routerLink="/checkout" class="carrinho" title="Ir para o checkout">Carrinho: {{ quantidade() }} itens</a>
         <button type="button" class="btn btn-sm btn-danger ms-2" (click)="esvaziarCarrinho()">Esvaziar</button>
       }
     </nav>
   </div>
 </header>
+
 
 
