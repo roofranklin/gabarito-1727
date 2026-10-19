@@ -11,11 +11,12 @@ import { ProductCard } from '../product-card/product-card';
 })
 export class ListaProdutos implements OnInit {
   produtos = signal<Produto[]>([]);
+  carregando = signal<boolean>(true);
 
   constructor(
     private productService: Product,
     private cartService: Cart,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.carregarProdutos();
@@ -24,6 +25,7 @@ export class ListaProdutos implements OnInit {
   carregarProdutos(): void {
     this.productService.obterProdutos().subscribe((dados) => {
       this.produtos.set(dados);
+      this.carregando.set(false);
     });
   }
 
