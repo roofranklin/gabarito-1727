@@ -30,3 +30,24 @@ nav span {
   padding: 0.25rem 0.6rem;
   border-radius: 12px;
 }
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: 1px solid #dc3545;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+.ms-2 {
+  margin-left: 0.5rem;
+}
+

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectQuantidadeItens } from '../../store/cart';
+import { clearCart, selectQuantidadeItens } from '../../store/cart';
 
 @Component({
   imports: [],
@@ -13,5 +13,11 @@ export class Cabecalho {
 
   // LENDO O COFRE: usando selectSignal para conectar o seletor ao template via Signal
   quantidade = this.store.selectSignal(selectQuantidadeItens);
+
+  // O DISPATCH: disparando a ação para esvaziar o cofre
+  esvaziarCarrinho() {
+    this.store.dispatch(clearCart());
+  }
 }
+
 

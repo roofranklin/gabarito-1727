@@ -41,4 +41,29 @@ describe('App', () => {
     const carrinho = compiled.querySelector('.carrinho');
     expect(carrinho?.textContent).toContain('Carrinho: 1 itens');
   });
+
+  it('should clear cart count in header when esvaziar button is clicked', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    const buttonComprar = compiled.querySelector('.btn-comprar') as HTMLButtonElement;
+    expect(buttonComprar).toBeTruthy();
+    buttonComprar.click();
+
+    await fixture.whenStable();
+    fixture.detectChanges();
+
+    expect(compiled.querySelector('.carrinho')?.textContent).toContain('Carrinho: 1 itens');
+
+    const buttonEsvaziar = compiled.querySelector('.btn-danger') as HTMLButtonElement;
+    expect(buttonEsvaziar).toBeTruthy();
+    buttonEsvaziar.click();
+
+    await fixture.whenStable();
+    fixture.detectChanges();
+
+    expect(compiled.querySelector('.carrinho')).toBeNull();
+  });
 });
+
