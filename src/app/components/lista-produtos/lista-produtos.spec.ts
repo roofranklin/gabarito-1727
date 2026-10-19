@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideStore } from '@ngrx/store';
+import { cartReducer } from '../../store/cart';
 import { ListaProdutos } from './lista-produtos';
 
 describe('ListaProdutos', () => {
@@ -8,6 +10,7 @@ describe('ListaProdutos', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ListaProdutos],
+      providers: [provideStore({ cart: cartReducer })],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ListaProdutos);
@@ -19,3 +22,4 @@ describe('ListaProdutos', () => {
     expect(component).toBeTruthy();
   });
 });
+
