@@ -1,5 +1,6 @@
 import { provideHttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { provideStore } from '@ngrx/store';
 import { cartReducer } from '../../store/cart';
 import { HomeComponent } from './home.component';
@@ -13,9 +14,11 @@ describe('HomeComponent', () => {
       imports: [HomeComponent],
       providers: [
         provideHttpClient(),
+        provideRouter([]),
         provideStore({ cart: cartReducer }),
       ],
     }).compileComponents();
+
 
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;

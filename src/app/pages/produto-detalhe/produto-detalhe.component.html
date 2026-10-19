@@ -1,0 +1,40 @@
+<section class="detalhe-container">
+  <div class="navegacao-topo">
+    <a routerLink="/" class="link-voltar">&larr; Voltar para os Produtos</a>
+  </div>
+
+  @if (carregando()) {
+    <div class="estado-mensagem">
+      <p>Carregando informações do produto...</p>
+    </div>
+  } @else if (erro()) {
+    <div class="estado-mensagem erro">
+      <p>{{ erro() }}</p>
+      <a routerLink="/" class="btn btn-primary mt-3">Voltar para a Loja</a>
+    </div>
+  } @else if (produto()) {
+    <div class="detalhe-card">
+      <div class="detalhe-imagem-container">
+        <img [src]="produto()?.image" [alt]="produto()?.title" class="detalhe-imagem" />
+      </div>
+
+      <div class="detalhe-info">
+        <span class="detalhe-categoria">{{ produto()?.category }}</span>
+        <h2 class="detalhe-titulo">{{ produto()?.title }}</h2>
+        <p class="detalhe-descricao">{{ produto()?.description }}</p>
+        <p class="detalhe-preco">{{ produto()?.price | currency: 'BRL' }}</p>
+
+        <div class="acoes">
+          <button type="button" class="btn btn-success btn-comprar" (click)="adicionarAoCarrinho()">
+            Adicionar ao Carrinho
+          </button>
+          <a routerLink="/checkout" class="btn btn-primary ms-2">Ir para o Checkout</a>
+        </div>
+
+        @if (adicionado()) {
+          <p class="feedback-sucesso">Item adicionado ao carrinho com sucesso!</p>
+        }
+      </div>
+    </div>
+  }
+</section>
