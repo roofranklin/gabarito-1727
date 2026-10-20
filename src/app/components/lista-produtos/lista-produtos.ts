@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { Cart } from '../../services/cart';
+import { Store } from '@ngrx/store';
 import { Product, Produto } from '../../services/product';
+import { adicionarProduto } from '../../store/cart';
 import { ProductCard } from '../product-card/product-card';
 
 @Component({
@@ -15,7 +16,7 @@ export class ListaProdutos implements OnInit {
 
   constructor(
     private productService: Product,
-    private cartService: Cart,
+    private store: Store,
   ) { }
 
   ngOnInit(): void {
@@ -29,8 +30,10 @@ export class ListaProdutos implements OnInit {
     });
   }
 
-  receberProduto(produto: any) {
+  receberProduto(produto: Produto) {
     console.log('Produto adicionado:', produto?.title);
-    this.cartService.adicionar(produto);
+    // DISPATCH: enviando a ação para a Store processar via Reducer
+    this.store.dispatch(adicionarProduto({ produto }));
   }
 }
+
