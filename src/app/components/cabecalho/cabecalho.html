@@ -7,8 +7,10 @@
       <span>Contato</span>
       @if (quantidade() > 0) {
         <span class="carrinho">Carrinho: {{ quantidade() }} itens</span>
+        <button type="button" class="btn btn-sm btn-danger ms-2" (click)="esvaziarCarrinho()">Esvaziar</button>
       }
     </nav>
   </div>
 </header>
+
 

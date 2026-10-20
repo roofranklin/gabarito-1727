@@ -1,5 +1,5 @@
 import { Produto } from '../../services/product';
-import { adicionarProduto } from './cart.actions';
+import { adicionarProduto, clearCart } from './cart.actions';
 import { cartReducer, initialCartState } from './cart.reducer';
 import { selectQuantidadeItens } from './cart.selectors';
 
@@ -29,6 +29,18 @@ describe('Redux Cart (Aula 05)', () => {
     expect(state.itens[0]).toEqual(produtoMock);
   });
 
+  it('deve esvaziar o carrinho quando a ação clearCart for disparada', () => {
+    const estadoComItens = {
+      itens: [produtoMock, { ...produtoMock, id: 2, title: 'Camiseta' }],
+    };
+
+    const action = clearCart();
+    const state = cartReducer(estadoComItens, action);
+
+    expect(state.itens.length).toBe(0);
+    expect(state.itens).toEqual([]);
+  });
+
   it('deve calcular corretamente a quantidade de itens via seletor', () => {
     const state = {
       cart: {
@@ -40,3 +52,4 @@ describe('Redux Cart (Aula 05)', () => {
     expect(quantidade).toBe(2);
   });
 });
+

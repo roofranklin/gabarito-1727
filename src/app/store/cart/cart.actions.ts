@@ -10,3 +10,6 @@ export const adicionarProduto = createAction(
   '[Carrinho] Adicionar Produto',
   props<{ produto: Produto }>()
 );
+
+export const clearCart = createAction('[Header] Clear Cart');
+
