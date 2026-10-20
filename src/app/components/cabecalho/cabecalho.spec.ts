@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { provideStore } from '@ngrx/store';
 import { cartReducer } from '../../store/cart';
 import { Cabecalho } from './cabecalho';
@@ -10,8 +11,12 @@ describe('Cabecalho', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Cabecalho],
-      providers: [provideStore({ cart: cartReducer })],
+      providers: [
+        provideRouter([]),
+        provideStore({ cart: cartReducer }),
+      ],
     }).compileComponents();
+
 
     fixture = TestBed.createComponent(Cabecalho);
     component = fixture.componentInstance;
