@@ -17,7 +17,7 @@ export interface Produto {
 export class Product {
   private apiUrl = 'https://fakestoreapi.com/products';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   obterProdutos(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this.apiUrl);
