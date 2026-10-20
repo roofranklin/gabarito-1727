@@ -1,18 +1,20 @@
 <div class="card-produto">
-  <div class="card-imagem">
-    <img [src]="produtoRecebido?.image" [alt]="produtoRecebido?.title" width="100" />
-  </div>
-  <div class="card-conteudo">
-    <h3 class="produto-nome">{{ produtoRecebido?.title | uppercase }}</h3>
-    <p class="produto-descricao">{{ produtoRecebido?.description | truncate: 30 }}</p>
-    @if ((produtoRecebido?.price ?? 0) > 100) {
-    <p class="produto-desconto">
-      Com 15% OFF: {{ produtoRecebido?.price | discount: 15 | currency: 'BRL' }}
-    </p>
-    }
-    <p class="produto-preco">{{ produtoRecebido?.price | currency: 'BRL' }}</p>
-    <button type="button" class="btn-comprar" (click)="clicouComprar()">
-      Adicionar ao Carrinho
-    </button>
-  </div>
+  <a [routerLink]="['/produto', produtoRecebido?.id]" style="text-decoration: none; color: inherit; cursor: pointer;">
+    <div class="card-imagem">
+      <img [src]="produtoRecebido?.image" [alt]="produtoRecebido?.title" width="100" />
+    </div>
+    <div class="card-conteudo">
+      <h3 class="produto-nome">{{ produtoRecebido?.title | uppercase }}</h3>
+      <p class="produto-descricao">{{ produtoRecebido?.description | truncate: 30 }}</p>
+      @if ((produtoRecebido?.price ?? 0) > 100) {
+      <p class="produto-desconto">
+        Com 15% OFF: {{ produtoRecebido?.price | discount: 15 | currency: 'BRL' }}
+      </p>
+      }
+      <p class="produto-preco">{{ produtoRecebido?.price | currency: 'BRL' }}</p>
+    </div>
+  </a>
+  <button type="button" class="btn-comprar" (click)="clicouComprar()">
+    Adicionar ao Carrinho
+  </button>
 </div>

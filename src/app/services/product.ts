@@ -22,4 +22,9 @@ export class Product {
   obterProdutos(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this.apiUrl);
   }
+
+  obterProdutoPorId(id: number | string): Observable<Produto> {
+    return this.http.get<Produto>(`${this.apiUrl}/${id}`);
+  }
 }
+

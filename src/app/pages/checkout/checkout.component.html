@@ -109,10 +109,45 @@
             </select>
           </div>
 
+          <!-- Número do Cartão -->
+          <div class="campo-grupo">
+            <label for="numeroCartao">Número do Cartão *</label>
+            <input
+              id="numeroCartao"
+              type="text"
+              class="form-control"
+              [class.campo-invalido]="isCampoInvalido('numeroCartao')"
+              formControlName="numeroCartao"
+              placeholder="Digite os 16 dígitos do cartão"
+              maxlength="16"
+            />
+            @if (isCampoInvalido('numeroCartao')) {
+              <small class="mensagem-erro text-danger">Cartão inválido</small>
+            }
+          </div>
+
+          <!-- Código de Segurança -->
+          <div class="campo-grupo">
+            <label for="codigoSeguranca">Código de Segurança *</label>
+            <input
+              id="codigoSeguranca"
+              type="text"
+              class="form-control"
+              [class.campo-invalido]="isCampoInvalido('codigoSeguranca')"
+              formControlName="codigoSeguranca"
+              placeholder="3 dígitos (CVV)"
+              maxlength="3"
+            />
+            @if (isCampoInvalido('codigoSeguranca')) {
+              <small class="mensagem-erro text-danger">Código inválido</small>
+            }
+          </div>
+
           <button type="submit" class="btn btn-success btn-block mt-3">
             Confirmar e Finalizar Pedido
           </button>
         </form>
+
       </div>
 
       <!-- Coluna 2: Resumo do Pedido vindo do Redux -->

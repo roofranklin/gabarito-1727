@@ -1,15 +1,17 @@
 import { CurrencyPipe, UpperCasePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { DiscountPipe } from '../../pipes/discount-pipe';
 import { TruncatePipe } from '../../pipes/truncate-pipe';
 import { Produto } from '../../services/product';
 
 @Component({
-  imports: [CurrencyPipe, UpperCasePipe, TruncatePipe, DiscountPipe],
+  imports: [CurrencyPipe, UpperCasePipe, TruncatePipe, DiscountPipe, RouterLink],
   selector: 'app-product-card',
   styleUrl: './product-card.css',
   templateUrl: './product-card.html',
 })
+
 export class ProductCard {
   @Input() produtoRecebido?: Produto;
   @Output() adicionar = new EventEmitter<any>();

@@ -29,6 +29,22 @@ export class CheckoutComponent {
     endereco: ['', [Validators.required, Validators.minLength(5)]],
     cidade: ['', [Validators.required]],
     pagamento: ['cartao', [Validators.required]],
+    numeroCartao: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(16),
+        Validators.maxLength(16),
+      ],
+    ],
+    codigoSeguranca: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(3),
+      ],
+    ],
   });
 
   // Método auxiliar para facilitar checagem de erros no template
@@ -44,6 +60,9 @@ export class CheckoutComponent {
       return;
     }
 
+    // Exibe no console conforme solicitado
+    console.log('Pedido finalizado');
+
     // Processa o pedido com sucesso
     this.pedidoConcluido.set(true);
 
@@ -56,3 +75,4 @@ export class CheckoutComponent {
     });
   }
 }
+
